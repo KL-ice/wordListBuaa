@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  Readin.cpp
+f:\学习\大三下\软件工程\第1次作业\wordlist\wordlist\readin.cpp(26): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\wordlist\wordlist\readin.cpp(38): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“char *”
+f:\学习\大三下\软件工程\第1次作业\wordlist\wordlist\readin.cpp(38): warning C4313: “printf”: 格式字符串中的“%d”与“char *”类型的参数 1 冲突
+  Wordlist.cpp
+  正在生成代码...
+  Wordlist.vcxproj -> F:\学习\大三下\软件工程\第1次作业\Wordlist\x64\Debug\Wordlist.exe
