@@ -16,12 +16,12 @@ class Input
 {
 public:
 	char FileName[100];
-	int OutToFile = 0;
-	int Mode = 0;
+	int Mode = -1;
 	int First = -1;
 	int Last = -1;
 	int Cancircle = 0;
 	void InputHandle(int n, char * para[]);
+	int CompareStr(char * s);
 	Input();
 	~Input();
 };

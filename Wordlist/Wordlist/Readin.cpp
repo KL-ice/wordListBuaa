@@ -75,23 +75,38 @@ void Readin::ClassifyWords()
 			Line 101.
 
 	*/
-	int i, j, k;
+	int i, j, tag = 0;;
 	int begin = 0, end = 0, len = 0;
 	WordTree.resize(26);
 	WordTreeLenth.resize(26);
+	WordTreeUsed.resize(26);
 	for (i = 0; i < 26; i++)
 	{
 		WordTree[i].resize(26);
 		WordTreeLenth[i].resize(26);
+		WordTreeUsed[i].resize(26);
 	}
 
 	for (i = 0; i < WordNum; i++)
 	{
+		tag = 0;
 		len = WordLen[i] - 1;
 		begin = Words[i][0]-'a';
 		end = Words[i][len]-'a';
-		WordTree[begin][end].push_back(Words[i]);
-		WordTreeLenth[begin][end].push_back(len + 1);
+		for (j = 0; j < WordTree[begin][end].size(); j++)
+		{
+			if (strcmp(Words[i], WordTree[begin][end][j]) == 0)
+			{
+				tag = 1;
+				break;
+			}			
+		}
+		if (tag == 0)
+		{
+			WordTree[begin][end].push_back(Words[i]);
+			WordTreeLenth[begin][end].push_back(len + 1);
+			WordTreeUsed[begin][end].push_back(1);
+		}
 	}
 	for (i = 0; i < 26; i++)
 	{

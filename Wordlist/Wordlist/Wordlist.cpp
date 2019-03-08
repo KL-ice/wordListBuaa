@@ -17,26 +17,30 @@ int main(int argc, char * argv[])
 	Readin *readin = new Readin();
 	readin->GetWords("F:\\a.txt");
 	readin->ClassifyWords();
-	GenList *genlist = new GenList(input->Last);
+	GenList *genlist = new GenList(input->Last, readin->WordTreeUsed);
+	genlist->DP(0, readin->WordTree);
+	//genlist->SerchCircle(readin->WordTree, readin->WordTreeUsed);
 	if (input->First == -1)
 	{
-		genlist->SerchList(input->Mode, 0, 26, readin->WordTree, readin->WordTreeLenth);
+		genlist->SerchListCircle(input->Mode, 0, 26, readin->WordTree, readin->WordTreeLenth, 0, 0);
 	}
 	else
 	{
 		FirstAlaph = input->First;
 		genlist->SerchList(input->Mode, FirstAlaph, FirstAlaph+1, readin->WordTree, readin->WordTreeLenth);
 	}
-	genlist->PrintRoad(input->OutToFile, input->FileName, readin->WordTree);
-	/*cout << endl << genlist->MaxLenth << endl;
+	//genlist->PrintRoad(input->OutToFile, input->FileName, readin->WordTree);
+	cout << endl << genlist->MaxLenth << endl;
 	int i = 0;
-	for (i = 0; i < genlist->Road.size(); i++)
+	for (i = 0; i < genlist->CRoad.size(); i++)
 	{
-		cout << genlist->Road[i] << " ";
+		cout << genlist->CRoad[i] << " ";
 	}
+	/*
 	cout << endl << argc;
 	for (i = 0; i < argc; i++)
-		cout << argv[i];*/
+		cout << argv[i];
+	*/
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单

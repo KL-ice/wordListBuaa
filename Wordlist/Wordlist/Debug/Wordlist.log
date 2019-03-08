@@ -1,2 +1,9 @@
 ﻿  GenList.cpp
-  Wordlist.vcxproj -> F:\学习\大三下\软件工程\第1次作业\Wordlist\Debug\Wordlist.exe
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(126): warning C4018: “<”: 有符号/无符号不匹配
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(137): warning C4018: “<”: 有符号/无符号不匹配
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(154): warning C4018: “<”: 有符号/无符号不匹配
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(162): warning C4018: “<”: 有符号/无符号不匹配
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(176): warning C4018: “<”: 有符号/无符号不匹配
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(202): warning C4018: “<”: 有符号/无符号不匹配
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\wordlist\wordlist\genlist.cpp(233): warning C4018: “<”: 有符号/无符号不匹配
+  Wordlist.vcxproj -> F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Debug\Wordlist.exe

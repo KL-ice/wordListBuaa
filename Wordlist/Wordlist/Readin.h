@@ -17,6 +17,7 @@ class Readin
 public:
 	vector<vector<vector<char * > > > WordTree;
 	vector<vector<vector<int > > > WordTreeLenth;
+	vector<vector<vector<int > > > WordTreeUsed;
 	int WordNum = 0;
 	void GetWords(const char * filename);
 	void ClassifyWords();
