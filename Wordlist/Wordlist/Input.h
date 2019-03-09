@@ -17,11 +17,11 @@ class Input
 public:
 	char FileName[100];
 	int Mode = -1;
-	int First = -1;
-	int Last = -1;
-	int Cancircle = 0;
+	int First = '0' - 'a';
+	int Last = '0' - 'a';
+	bool Cancircle = false;
 	void InputHandle(int n, char * para[]);
-	int CompareStr(char * s);
+	int CompareStr(char * s, const char * a);
 	Input();
 	~Input();
 };

@@ -12,19 +12,19 @@ Input::~Input()
 }
 
 
-int Input::CompareStr(char * s)
+int Input::CompareStr(char * s, const char *a)
 {
-	int i, tag = 0;
-	char a[] = "txt.";
-	for (i = strlen(s) - 1; i >= 0; i++)
+	int i, tag = 0, j = 0;
+	for (i = strlen(s) - 1; i >= 0; i--)
 	{
 		tag += 1;
-		if (s[i] != a[i])
+		if (s[i] != a[j])
 		{
 			return -1;
 		}
 		if (tag == 4)
 			break;
+		j++;
 	}
 	return 1;
 }
@@ -49,6 +49,7 @@ void Input::InputHandle(int n, char * para[])
 			if (strlen(para[i + 1]) > 1)
 			{
 				cout << "Too Long Begin!" << endl;
+				throw "Too Long Begin!";
 			}
 		}
 		else if (strcmp(para[i], "-t") == 0)
@@ -57,15 +58,20 @@ void Input::InputHandle(int n, char * para[])
 			if (strlen(para[i + 1]) > 1)
 			{
 				cout << "Too Long End!" << endl;
+				throw "Too Long End!";
 			}
 		}
 		else if (strcmp(para[i], "-r") == 0)
 		{
-			Cancircle = 1;
+			Cancircle = true;
 		}
-		else if (CompareStr(para[i]) == 1)
+		else if (CompareStr(para[i], "txt.") == 1)
 		{
-			strcpy_s(FileName, strlen(para[i + 1]) + 1, para[i + 1]);
+			strcpy_s(FileName, strlen(para[i]) + 1, para[i]);
+			if (i != n - 1)
+			{
+				throw "Too many parameters";
+			}
 		}
 	}
 }

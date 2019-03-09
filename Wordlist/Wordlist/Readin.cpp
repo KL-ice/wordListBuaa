@@ -11,13 +11,13 @@ bool compare_str(char * a, char * b)
 	return strlen(a) > strlen(b);
 }
 
-void Readin::GetWords(const char* filename)
+void Readin::GetWords(char* filename)
 {
 	/*
 		Get words from the txt.
 	*/
 	string data;
-	char OneWord[50];
+	char OneWord[500];
 	int OneWordLenth = 0;
 	int i;
 	ifstream infile(filename);
@@ -25,8 +25,7 @@ void Readin::GetWords(const char* filename)
 	if (!infile)
 	{
 		//Error system.
-		cout << "Fail to open the file" << endl;
-		exit(-1);
+		throw "Fail to open the file";
 	}
 	tmp << infile.rdbuf();
 	data = tmp.str();
@@ -44,6 +43,7 @@ void Readin::GetWords(const char* filename)
 			if (OneWordLenth != 0)
 			{
 				OneWord[OneWordLenth] = '\0';
+				Words[WordNum] = new char[OneWordLenth + 1];
 				strcpy_s(Words[WordNum], OneWordLenth+1, OneWord);
 				WordLen[WordNum] = OneWordLenth;
 				WordNum += 1;
@@ -54,6 +54,7 @@ void Readin::GetWords(const char* filename)
 	if (OneWordLenth != 0)
 	{
 		OneWord[OneWordLenth] = '\0';
+		Words[WordNum] = new char[OneWordLenth + 1];
 		strcpy_s(Words[WordNum], OneWordLenth + 1, OneWord);
 		WordLen[WordNum] = OneWordLenth;
 		WordNum += 1;
