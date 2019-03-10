@@ -19,12 +19,11 @@ public:
 	vector<vector<vector<int > > > WordTreeLenth;
 	vector<vector<vector<int > > > WordTreeUsed;
 	int WordNum = 0;
-	char * Words[10000];
-	int WordLen[10000];
+	char ** Words = new char *[11000];
+	int WordLen[11000] = { 0 };
 	void GetWords(char * filename);
-	void ClassifyWords();
 private:
-	
+	void ClassifyWords();
 };
 
 bool compare(int a, int b);

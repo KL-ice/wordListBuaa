@@ -35,6 +35,10 @@ void Readin::GetWords(char* filename)
 		int CharNum = data[i];
 		if ((CharNum >= 65 && CharNum <= 90) || (CharNum >= 97 && CharNum <= 122))
 		{
+			if (OneWordLenth >= 498)
+			{
+				throw "Too long word!";
+			}
 			OneWord[OneWordLenth] = tolower(data[i]);
 			OneWordLenth += 1;
 		}
@@ -42,17 +46,25 @@ void Readin::GetWords(char* filename)
 		{
 			if (OneWordLenth != 0)
 			{
+				if (WordNum > 10000)
+				{
+					throw "Too many words";
+				}
 				OneWord[OneWordLenth] = '\0';
 				Words[WordNum] = new char[OneWordLenth + 1];
-				strcpy_s(Words[WordNum], OneWordLenth+1, OneWord);
+				strcpy_s(Words[WordNum], OneWordLenth + 1, OneWord);
 				WordLen[WordNum] = OneWordLenth;
 				WordNum += 1;
 				OneWordLenth = 0;
-			}	
+			}
 		}
 	}
 	if (OneWordLenth != 0)
 	{
+		if (WordNum > 10000)
+		{
+			throw "Too many words";
+		}
 		OneWord[OneWordLenth] = '\0';
 		Words[WordNum] = new char[OneWordLenth + 1];
 		strcpy_s(Words[WordNum], OneWordLenth + 1, OneWord);
@@ -60,6 +72,8 @@ void Readin::GetWords(char* filename)
 		WordNum += 1;
 		OneWordLenth = 0;
 	}
+
+
 	//for (i = 0; i < WordNum; i++)
 	//	cout << Words[i] << WordLen[i]<<endl;
 }
@@ -94,7 +108,8 @@ void Readin::ClassifyWords()
 		len = WordLen[i] - 1;
 		begin = Words[i][0]-'a';
 		end = Words[i][len]-'a';
-		for (j = 0; j < WordTree[begin][end].size(); j++)
+		int j_len = WordTree[begin][end].size();
+		for (j = 0; j < j_len; j++)
 		{
 			if (strcmp(Words[i], WordTree[begin][end][j]) == 0)
 			{

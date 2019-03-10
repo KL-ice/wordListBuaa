@@ -4,7 +4,7 @@
 
 
 
-GenList::GenList(int last, vector<vector<vector<int > > > WordTreeUse)
+GenList::GenList(int last)
 {
 	int i, j;
 	for (i = 0; i < 26; i++)
@@ -21,7 +21,6 @@ GenList::GenList(int last, vector<vector<vector<int > > > WordTreeUse)
 		Last = last;
 		LastMode = 1;
 	}
-	WTU = WordTreeUse;
 	
 }
 
@@ -99,46 +98,41 @@ void GenList::SerchList(int mode, int AlaphBegin, int AlaphEnd, vector<vector<ve
 
 }
 
-void GenList::PrintRoad(int NeedToFile, char * filename, vector<vector<vector<char * > > > WordTree)
+void GenList::PrintRoad()
 {
 	/*
 		Control print.
 	*/
 	unsigned int i;
-	int begin, end;
-	if (NeedToFile == 0)
+	int len_r = 0;
+
+
+	ofstream outfile("F:\\solution.txt");
+	if (!outfile)
 	{
-		for (i = 0; i < (Road.size() - 1); i++)
-		{
-			begin = Road[i];
-			end = Road[i + 1];
-			cout << WordTree[begin][end][0] << endl;
-		}
+		cout << "Fail to open the out file" << endl;
+		throw "Fail to open the out file";
 	}
 	else
 	{
-		ofstream outfile(filename);
-		if (!outfile)
+		len_r = CRoad.size();
+		if (len_r < 2)
 		{
-			cout << "Fail to open the out file" << endl;
-			throw "Fail to open the out file";
+			throw "Not a circle";
 		}
-		else
+		for (i = 0; i < len_r; i++)
 		{
-			for (i = 0; i < (Road.size() - 1); i++)
-			{
-				begin = Road[i];
-				end = Road[i + 1];
-				outfile << WordTree[begin][end][0] << endl;
-			}
+			
+			outfile << CRoad[i] << endl;
 		}
 	}
+
 	
 }
 
 void GenList::SerchCircle(vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeUsed)
 {
-	int i, j, k, a, b;
+	int i, j;
 	int tag = 1;
 
 	for (i = 0; i < 26; i++)
@@ -177,7 +171,11 @@ void GenList::SerchCircle(vector<vector<vector<char * > > > WordTree, vector<vec
 					}
 				}
 				indeg[i] -= 1;
-				break;
+				/*if (tag == 1)
+				{
+					break;
+				}*/
+				
 			}
 		}	
 	}
@@ -201,16 +199,26 @@ void GenList::SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, vector<vec
 		mode = 1:	more alaph;
 	*/
 
-	int i, j, k;
+	int i, j, k, nj;
 	int Once;
 	for (i = AlaphBegin; i < AlaphEnd; i++)
 	{
-		for (j = 0; j < 26; j++)
+		
+		int nj_len = GWordTreeNext[i].size();
+		for(nj = 0; nj<nj_len; nj++)
 		{
-			for (k = 0; k < WTU[i][j].size(); k++)
+			
+			j = GWordTreeNext[i][nj];
+			//if (AlaphBegin == 0 && AlaphEnd == 26)
+			//{
+				
+			//}
+			int k_len = GWordTreeUsed[i][j].size();
+			for (k = 0; k < k_len; k++)
 			{
-				if (WTU[i][j][k] == 1)
+				if (GWordTreeUsed[i][j][k] == 1)
 				{
+					cout << i << " " << j << endl;
 					if (mode == 0)
 					{
 						Once = 1;
@@ -222,9 +230,10 @@ void GenList::SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, vector<vec
 
 					RoadLenth += Once;
 					COneRoad.push_back(WordTree[i][j][k]);
-					WTU[i][j][k] = 0;
+					GWordTreeUsed[i][j][k] = 0;
+					//cout << GWordTree[i][j][k] << endl;
 					SerchListCircle(mode, j, j + 1, WordTree, WordTreeLenth, i, k);
-					WTU[i][j][k] = 1;
+					GWordTreeUsed[i][j][k] = 1;
 					COneRoad.pop_back();
 					RoadLenth -= Once;
 				}
@@ -232,13 +241,16 @@ void GenList::SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, vector<vec
 		}
 	}
 
+
 	if (RoadLenth > MaxLenth)
 	{
+		//cout << RoadLenth << endl;
 		if ((LastMode == 1 && (i - 1) == Last) || (LastMode == 0))
 		{
 			MaxLenth = RoadLenth;
 			CRoad.clear();
-			for (j = 0; j < COneRoad.size(); j++)
+			int j_len = COneRoad.size();
+			for (j = 0; j < j_len; j++)
 			{
 				CRoad.push_back(COneRoad[j]);
 			}
@@ -408,6 +420,7 @@ void GenList::ClassifyWords(char* words[], int len)
 	GWordTree.resize(26);
 	GWordTreeLenth.resize(26);
 	GWordTreeUsed.resize(26);
+	GWordTreeNext.resize(26);
 	for (i = 0; i < 26; i++)
 	{
 		GWordTree[i].resize(26);
@@ -421,8 +434,9 @@ void GenList::ClassifyWords(char* words[], int len)
 		len1 = strlen(words[i]) - 1;
 		begin = words[i][0] - 'a';
 		end = words[i][len1] - 'a';
-		for (j = 0; j < GWordTree[begin][end].size(); j++)
-		{
+		int j_len = GWordTree[begin][end].size();
+		for (j = 0; j < j_len; j++)
+		{		
 			if (strcmp(words[i], GWordTree[begin][end][j]) == 0)
 			{
 				tag = 1;
@@ -444,6 +458,7 @@ void GenList::ClassifyWords(char* words[], int len)
 			{
 				sort(GWordTree[i][j].begin(), GWordTree[i][j].end(), compare_str);
 				sort(GWordTreeLenth[i][j].begin(), GWordTreeLenth[i][j].end(), compare);
+				GWordTreeNext[i].push_back(j);
 			}
 		}
 	}
@@ -456,7 +471,7 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 	int st_len = 0;
 
 	ClassifyWords(words, len);
-	if (tail = '0')
+	if (tail == '0')
 	{
 		LastMode = 0;
 	}
@@ -476,6 +491,7 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 			int H = head - 'a';
 			SerchListCircle(0, H, H + 1, GWordTree, GWordTreeLenth, 0, 0);
 		}
+		PrintRoad();
 		long_return = CRoad.size();
 		for (i = 0; i < long_return; i++)
 		{
@@ -529,7 +545,7 @@ int GenList::gen_chain_char(char* words[], int len, char* result[], char head, c
 	int st_len = 0;
 
 	ClassifyWords(words, len);
-	if (tail = '0')
+	if (tail == '0')
 	{
 		LastMode = 0;
 	}

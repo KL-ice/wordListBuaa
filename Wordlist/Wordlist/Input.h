@@ -15,14 +15,17 @@ using namespace std;
 class Input
 {
 public:
-	char FileName[100];
+	char *FileName;
 	int Mode = -1;
 	int First = '0' - 'a';
 	int Last = '0' - 'a';
 	bool Cancircle = false;
+
 	void InputHandle(int n, char * para[]);
-	int CompareStr(char * s, const char * a);
 	Input();
 	~Input();
+private:
+	int CompareStr(char * s, const char * a);
+
 };
 

@@ -2,9 +2,9 @@
 #include "Core.h"
 
 
-Core::Core(int last, vector<vector<vector<int > > > WordTreeUse)
+Core::Core(int last)
 {
-	a = new GenList(last, WordTreeUse);
+	a = new GenList(last);
 }
 
 

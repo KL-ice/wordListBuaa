@@ -12,10 +12,9 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-	int a;
 	try
 	{
-		char * result[10000];
+		char ** result = new char * [11000];
 		int RoadLen = 0;
 		int FirstAlaph = 0;
 		Input *input = new Input();
@@ -26,10 +25,10 @@ int main(int argc, char * argv[])
 		}
 		Readin *readin = new Readin();
 		readin->GetWords(input->FileName);
-		readin->ClassifyWords();
+		//readin->ClassifyWords();
 
-		Core *core = new Core(input->Last, readin->WordTreeUsed);
-		//GenList *genlist = new GenList(input->Last, readin->WordTreeUsed);
+		Core *core = new Core(input->Last);
+		//GenList *genlist = new GenList(input->Last);
 
 		if (input->Mode == 0)
 		{
@@ -45,10 +44,15 @@ int main(int argc, char * argv[])
 		{
 			cout << result[i] << endl;
 		}
+		cout << RoadLen << endl;
 	}
 	catch (const char* msg)
 	{
 		cout << msg;
+	}
+	catch (...)
+	{
+		cout << "Error";
 	}
 	
 }

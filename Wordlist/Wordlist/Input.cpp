@@ -33,6 +33,7 @@ int Input::CompareStr(char * s, const char *a)
 void Input::InputHandle(int n, char * para[])
 {
 	int i;
+	int tag = 0;
 	for (i = 1; i < n; i++)
 	{
 		if (strcmp(para[i], "-w") == 0)
@@ -45,20 +46,28 @@ void Input::InputHandle(int n, char * para[])
 		}
 		else if (strcmp(para[i], "-h") == 0)
 		{
-			First = para[i + 1][0] - 'a';
+			First = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
 				cout << "Too Long Begin!" << endl;
 				throw "Too Long Begin!";
 			}
+			if (First < 0 || First >= 26)
+			{
+				throw "Need a char";
+			}
 		}
 		else if (strcmp(para[i], "-t") == 0)
 		{
-			Last = para[i + 1][0] - 'a';
+			Last = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
 				cout << "Too Long End!" << endl;
 				throw "Too Long End!";
+			}
+			if (Last < 0 || Last >= 26)
+			{
+				throw "Need a char";
 			}
 		}
 		else if (strcmp(para[i], "-r") == 0)
@@ -67,11 +76,18 @@ void Input::InputHandle(int n, char * para[])
 		}
 		else if (CompareStr(para[i], "txt.") == 1)
 		{
-			strcpy_s(FileName, strlen(para[i]) + 1, para[i]);
+			tag = 1;
+			int Uslen = strlen(para[i]) + 1;
+			FileName = new char[Uslen];
+			strcpy_s(FileName, Uslen, para[i]);
 			if (i != n - 1)
 			{
 				throw "Too many parameters";
 			}
 		}
+	}
+	if (tag != 1)
+	{
+		throw "No legal file";
 	}
 }
