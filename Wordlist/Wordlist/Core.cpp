@@ -2,9 +2,9 @@
 #include "Core.h"
 
 
-Core::Core(int last)
+Core::Core()
 {
-	a = new GenList(last);
+	a = new GenList();
 }
 
 

@@ -27,8 +27,8 @@ int main(int argc, char * argv[])
 		readin->GetWords(input->FileName);
 		//readin->ClassifyWords();
 
-		Core *core = new Core(input->Last);
-		//GenList *genlist = new GenList(input->Last);
+		Core *core = new Core();
+		//GenList *genlist = new GenList();
 
 		if (input->Mode == 0)
 		{
@@ -39,12 +39,15 @@ int main(int argc, char * argv[])
 			RoadLen = core->gen_chain_char(readin->Words, readin->WordNum, result, input->First + 'a', input->Last + 'a', input->Cancircle);
 		}
 
+		ofstream outfile("solution.txt");
 		int i;
 		for (i = 0; i < RoadLen; i++)
 		{
+			outfile << result[i] << endl;
 			cout << result[i] << endl;
 		}
 		cout << RoadLen << endl;
+		outfile.close();
 	}
 	catch (const char* msg)
 	{

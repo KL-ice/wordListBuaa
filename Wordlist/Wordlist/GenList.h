@@ -23,7 +23,7 @@ public:
 	int gen_chain_char(char* words[], int len, char* result[], char head, char tail, bool enable_loop);
 
 
-	GenList(int last);
+	GenList();
 private:
 	int Last = 0;
 	int LastMode = 0;

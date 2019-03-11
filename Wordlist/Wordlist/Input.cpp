@@ -46,6 +46,7 @@ void Input::InputHandle(int n, char * para[])
 		}
 		else if (strcmp(para[i], "-h") == 0)
 		{
+			i += 1;
 			First = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
@@ -54,11 +55,12 @@ void Input::InputHandle(int n, char * para[])
 			}
 			if (First < 0 || First >= 26)
 			{
-				throw "Need a char";
+				throw "Need a alapa";
 			}
 		}
 		else if (strcmp(para[i], "-t") == 0)
 		{
+			i += 1;
 			Last = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
@@ -67,7 +69,7 @@ void Input::InputHandle(int n, char * para[])
 			}
 			if (Last < 0 || Last >= 26)
 			{
-				throw "Need a char";
+				throw "Need a alapa";
 			}
 		}
 		else if (strcmp(para[i], "-r") == 0)
@@ -85,9 +87,13 @@ void Input::InputHandle(int n, char * para[])
 				throw "Too many parameters";
 			}
 		}
+		else
+		{
+			throw "illegal parameter";
+		}
 	}
 	if (tag != 1)
 	{
-		throw "No legal file";
+		throw "No a legal file";
 	}
 }
