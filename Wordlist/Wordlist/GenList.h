@@ -34,6 +34,7 @@ private:
 	
 	int indeg[26];
 
+	
 
 	vector<int> OneRoad;
 	vector<char * > COneRoad;
@@ -47,7 +48,10 @@ private:
 	void ClassifyWords(char* words[], int len);
 	void SerchList(int mode, int AlaphBegin, int AlaphEnd, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth);
 	void SerchCircle(vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeUsed);
-	void SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth, int a, int b);
+	void SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, int a, int b);
+
+	
+
 	void Print(int mode, const char * filename, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth);
 	void SerchListLastMode(int mode, int AlaphBegin, int AlaphEnd, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth);
 
