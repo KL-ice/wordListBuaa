@@ -9,11 +9,10 @@
 #include <vector>
 #include <algorithm>
 #include <vector>
-#include <assert.h>
 
 using namespace std;
 
-class Readin
+class __declspec(dllexport) Readin
 {
 public:
 	vector<vector<vector<char * > > > WordTree;
@@ -27,5 +26,5 @@ private:
 	void ClassifyWords();
 };
 
-bool compare(int a, int b);
-bool compare_str(char * a, char * b);
+extern __declspec(dllexport) bool compare(int a, int b);
+extern __declspec(dllexport) bool compare_str(char * a, char * b);

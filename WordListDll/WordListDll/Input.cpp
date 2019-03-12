@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Input.h"
+#include "stdafx.h"
 
 
 Input::Input()
@@ -38,22 +39,15 @@ void Input::InputHandle(int n, char * para[])
 	{
 		if (strcmp(para[i], "-w") == 0)
 		{
-			if (Mode != -1)
-			{
-				throw "need one -c or -w";
-			}
 			Mode = 0;
 		}
 		else if (strcmp(para[i], "-c") == 0)
 		{
-			if (Mode != -1)
-			{
-				throw "need one -c or -w";
-			}
 			Mode = 1;
 		}
 		else if (strcmp(para[i], "-h") == 0)
 		{
+			i += 1;
 			First = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
@@ -64,10 +58,10 @@ void Input::InputHandle(int n, char * para[])
 			{
 				throw "Need a alapa";
 			}
-			i += 1;
 		}
 		else if (strcmp(para[i], "-t") == 0)
 		{
+			i += 1;
 			Last = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
@@ -78,7 +72,6 @@ void Input::InputHandle(int n, char * para[])
 			{
 				throw "Need a alapa";
 			}
-			i += 1;
 		}
 		else if (strcmp(para[i], "-r") == 0)
 		{
@@ -103,9 +96,5 @@ void Input::InputHandle(int n, char * para[])
 	if (tag != 1)
 	{
 		throw "No a legal file";
-	}
-	if (Mode != -1)
-	{
-		throw "need one -c or -w";
 	}
 }

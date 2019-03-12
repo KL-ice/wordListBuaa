@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class GenList
+class __declspec(dllexport) GenList
 {
 public:	
 	//int RoadList[10000];
@@ -23,7 +23,7 @@ public:
 	int gen_chain_char(char* words[], int len, char* result[], char head, char tail, bool enable_loop);
 
 
-	GenList();
+	GenList(int last);
 private:
 	int Last = 0;
 	int LastMode = 0;
@@ -33,11 +33,7 @@ private:
 	int use[26][26] = {0};
 	
 	int indeg[26];
-	int outdeg[26];
-	int needgo[26];
-	int FirstTimeIn = 0;
 
-	
 
 	vector<int> OneRoad;
 	vector<char * > COneRoad;
@@ -51,11 +47,7 @@ private:
 	void ClassifyWords(char* words[], int len);
 	void SerchList(int mode, int AlaphBegin, int AlaphEnd, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth);
 	void SerchCircle(vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeUsed);
-	void SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, int a, int b);
-
-	void GetOutDeg();
-	
-
+	void SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth, int a, int b);
 	void Print(int mode, const char * filename, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth);
 	void SerchListLastMode(int mode, int AlaphBegin, int AlaphEnd, vector<vector<vector<char * > > > WordTree, vector<vector<vector<int > > > WordTreeLenth);
 

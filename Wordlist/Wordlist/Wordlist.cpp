@@ -19,10 +19,7 @@ int main(int argc, char * argv[])
 		int FirstAlaph = 0;
 		Input *input = new Input();
 		input->InputHandle(argc, argv);
-		if (input->Mode == -1)
-		{
-			throw "Need -w or -c";
-		}
+
 		Readin *readin = new Readin();
 		readin->GetWords(input->FileName);
 		//readin->ClassifyWords();
@@ -30,6 +27,7 @@ int main(int argc, char * argv[])
 		Core *core = new Core();
 		//GenList *genlist = new GenList();
 
+		assert(input->Mode != -1);
 		if (input->Mode == 0)
 		{
 			RoadLen = core->gen_chain_word(readin->Words, readin->WordNum, result, input->First + 'a', input->Last + 'a', input->Cancircle);

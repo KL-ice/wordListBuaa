@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Readin.h"
+#include "stdafx.h"
+
 
 bool compare(int a, int b)
 {
@@ -20,7 +22,6 @@ void Readin::GetWords(char* filename)
 	char OneWord[500];
 	int OneWordLenth = 0;
 	int i;
-	assert(filename != NULL);
 	ifstream infile(filename);
 	ostringstream tmp;
 	if (!infile)

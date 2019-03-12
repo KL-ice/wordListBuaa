@@ -18,7 +18,7 @@ namespace UnitTests
 			// TODO: 在此输入测试代码
 			Input *input = new Input();
 			int n = 3;
-			char * instr[] = { " ", "-w","F:\\a.txt" };
+			char * instr[] = { " ", "-w","..\\Wordlist\\a.txt" };
 			char ** result = new char *[11000];
 			int len = 0;
 			input->InputHandle(n, instr);
@@ -28,7 +28,7 @@ namespace UnitTests
 			int i = 0;
 			for (i = 0; i < 8; i++)
 			{
-				Core *core = new Core(input->Last);
+				Core *core = new Core();
 				switch (i)
 				{
 				case(0):
@@ -75,7 +75,7 @@ namespace UnitTests
 			// TODO: 在此输入测试代码
 			Input *input = new Input();
 			int n = 3;
-			char * instr[] = { " ", "-w","F:\\c.txt" };
+			char * instr[] = { " ", "-w","..\\Wordlist\\c.txt" };
 			char ** result = new char *[11000];
 			int len = 0;
 			input->InputHandle(n, instr);
@@ -85,7 +85,7 @@ namespace UnitTests
 			int i = 0;
 			for (i = 0; i < 8; i++)
 			{
-				Core *core = new Core(input->Last);
+				Core *core = new Core();
 				switch (i)
 				{
 				case(0):
@@ -125,6 +125,88 @@ namespace UnitTests
 
 				delete core;
 			}
+
+		}
+
+		TEST_METHOD(TestMethod3)
+		{
+			// TODO: 在此输入测试代码
+			try
+			{
+				Input *input = new Input();
+				int n = 3;
+				char * instr[] = { " ", "-w","..\\Wordlist\\test_gen.txt" };
+				char ** result = new char *[11000];
+				int len = 0;
+				input->InputHandle(n, instr);
+				Readin *readin = new Readin();
+				readin->GetWords(input->FileName);
+
+
+				Core *core = new Core();
+
+				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', true);
+			}
+			catch (const char * msg)
+			{
+				cout << msg << endl;
+			}
+
+		}
+
+		TEST_METHOD(TestMethod4)
+		{
+			// TODO: 在此输入测试代码
+			try
+			{
+				Input *input = new Input();
+				int n = 3;
+				char * instr[] = { " ", "-w","..\\Wordlist\\test_gen1.txt" };
+				char ** result = new char *[11000];
+				int len = 0;
+				input->InputHandle(n, instr);
+				Readin *readin = new Readin();
+				readin->GetWords(input->FileName);
+
+
+				Core *core = new Core();
+
+				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+			}
+			catch (const char * msg)
+			{
+				cout << msg << endl;
+			}
+
+
+
+		}
+
+		TEST_METHOD(TestMethod5)
+		{
+			// TODO: 在此输入测试代码
+			try
+			{
+				Input *input = new Input();
+				int n = 3;
+				char * instr[] = { " ", "-w","..\\Wordlist\\test_gen2.txt" };
+				char ** result = new char *[11000];
+				int len = 0;
+				input->InputHandle(n, instr);
+				Readin *readin = new Readin();
+				readin->GetWords(input->FileName);
+
+
+				Core *core = new Core();
+
+				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+			}
+			catch (const char * msg)
+			{
+				cout << msg << endl;
+			}
+
+
 
 		}
 
