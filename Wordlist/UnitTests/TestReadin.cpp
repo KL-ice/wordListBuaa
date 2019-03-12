@@ -44,7 +44,7 @@ namespace UnitTests
 			}
 			catch (const char * msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Fail to open the file"); 
 			}
 			
 		}
@@ -62,7 +62,7 @@ namespace UnitTests
 			}
 			catch (const char * msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Too long word!");
 			}
 
 		}
@@ -81,7 +81,7 @@ namespace UnitTests
 			}
 			catch (const char * msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Too many words");
 			}
 
 		}

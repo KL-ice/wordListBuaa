@@ -88,6 +88,10 @@ void Input::InputHandle(int n, char * para[])
 		{
 			tag = 1;
 			int Uslen = strlen(para[i]) + 1;
+			if (Uslen >= 150)
+			{
+				throw "Too long filename";
+			}
 			FileName = new char[Uslen];
 			strcpy_s(FileName, Uslen, para[i]);
 			if (i != n - 1)
@@ -104,7 +108,7 @@ void Input::InputHandle(int n, char * para[])
 	{
 		throw "No a legal file";
 	}
-	if (Mode != -1)
+	if (Mode == -1)
 	{
 		throw "need one -c or -w";
 	}

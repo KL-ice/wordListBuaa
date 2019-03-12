@@ -15,7 +15,7 @@ using namespace std;
 class Input
 {
 public:
-	char *FileName;
+	char *FileName = new char[200];
 	int Mode = -1;
 	int First = '0' - 'a';
 	int Last = '0' - 'a';

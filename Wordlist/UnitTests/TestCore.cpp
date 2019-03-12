@@ -149,7 +149,7 @@ namespace UnitTests
 			}
 			catch (const char * msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "No solution");
 			}
 
 		}
@@ -175,7 +175,7 @@ namespace UnitTests
 			}
 			catch (const char * msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Become Circle");
 			}
 
 
@@ -203,7 +203,7 @@ namespace UnitTests
 			}
 			catch (const char * msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "No solution");
 			}
 
 

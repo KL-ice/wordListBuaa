@@ -83,7 +83,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "need one -c or -w");
 			}
 		}
 
@@ -99,7 +99,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "need one -c or -w");
 			}
 		}
 
@@ -115,7 +115,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "illegal parameter");
 			}
 		}
 
@@ -131,7 +131,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Too Long Begin!");
 			}
 		}
 
@@ -147,7 +147,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Need a alapa");
 			}
 		}
 
@@ -163,7 +163,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Too Long End!");
 			}
 		}
 
@@ -179,7 +179,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Need a alapa");
 			}
 		}
 
@@ -195,7 +195,7 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "illegal parameter");
 			}
 		}
 
@@ -211,11 +211,25 @@ namespace UnitTests
 			}
 			catch (const char* msg)
 			{
-				cout << msg << endl;
+				Assert::AreEqual(msg, "Too many parameters");
 			}
-
-
-
 		}
+
+		TEST_METHOD(TestMethod15)
+		{
+			// TODO: 在此输入测试代码
+			try
+			{
+				Input *input = new Input();
+				int n = 4;
+				char * instr[] = { " ", "-w", "-r", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt" };
+				input->InputHandle(n, instr);
+			}
+			catch (const char* msg)
+			{
+				Assert::AreEqual(msg, "Too long filename");
+			}
+		}
+
 	};
 }
