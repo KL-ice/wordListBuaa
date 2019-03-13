@@ -52,7 +52,7 @@ int main(int argc, char * argv[])
 		if (input->Mode == 0)
 		{
 			//RoadLen = core->gen_chain_word(readin->Words, readin->WordNum, result, input->First + 'a', input->Last + 'a', input->Cancircle);
-			RoadLen = gen_chain_word(readin->Words, readin->WordNum, result, input->First + 'a', input->Last + 'a', input->Cancircle);
+			RoadLen = gen_chain_word(readin->Words, readin->WordNum, result, 0,0, input->Cancircle);
 
 		}
 		else

@@ -17,8 +17,8 @@ class Input
 public:
 	char *FileName = new char[200];
 	int Mode = -1;
-	int First = '0' - 'a';
-	int Last = '0' - 'a';
+	int First = '\0' - 'a';
+	int Last = '\0' - 'a';
 	bool Cancircle = false;
 
 	void InputHandle(int n, char * para[]);

@@ -503,14 +503,14 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 	int i;
 	int st_len = 0;
 
-	if (tail != '0')
+	if (tail != '\0')
 	{
 		Last = tail - 'a';
 		LastMode = 1;
 	}
 
 	ClassifyWords(words, len);
-	if (tail == '0')
+	if (tail == '\0')
 	{
 		LastMode = 0;
 	}
@@ -522,7 +522,7 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 	if (enable_loop)
 	{
 		GetOutDeg();
-		if (head == '0')
+		if (head == '\0')
 		{
 			SerchListCircle(0, 0, 26, 0, 0);
 		}
@@ -543,7 +543,7 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 	else
 	{
 		SerchCircle(GWordTree, GWordTreeUsed);
-		if (head == '0')
+		if (head == '\0')
 		{
 			if (LastMode == 0)
 			{
@@ -584,14 +584,14 @@ int GenList::gen_chain_char(char* words[], int len, char* result[], char head, c
 	int i;
 	int st_len = 0;
 
-	if (tail != '0')
+	if (tail != '\0')
 	{
 		Last = tail - 'a';
 		LastMode = 1;
 	}
 
 	ClassifyWords(words, len);
-	if (tail == '0')
+	if (tail == '\0')
 	{
 		LastMode = 0;
 	}
@@ -603,7 +603,7 @@ int GenList::gen_chain_char(char* words[], int len, char* result[], char head, c
 	if (enable_loop)
 	{
 		GetOutDeg();
-		if (head == '0')
+		if (head == '\0')
 		{
 			SerchListCircle(1, 0, 26, 0, 0);
 		}
@@ -623,7 +623,7 @@ int GenList::gen_chain_char(char* words[], int len, char* result[], char head, c
 	else
 	{
 		SerchCircle(GWordTree, GWordTreeUsed);
-		if (head == '0')
+		if (head == '\0')
 		{
 			if (LastMode == 0)
 			{
