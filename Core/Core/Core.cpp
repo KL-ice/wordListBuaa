@@ -503,6 +503,11 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 	int i;
 	int st_len = 0;
 
+	assert(words != NULL);
+	assert(result != NULL);
+
+	//cout << len << endl;
+
 	if (tail != '\0')
 	{
 		Last = tail - 'a';
@@ -575,6 +580,7 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 			strcpy_s(result[i], st_len, NCRoad[i]);
 		}
 	}
+	//cout << long_return;
 	return long_return;
 }
 
@@ -583,6 +589,8 @@ int GenList::gen_chain_char(char* words[], int len, char* result[], char head, c
 	int long_return = 0;
 	int i;
 	int st_len = 0;
+	assert(words != NULL);
+	assert(result != NULL);
 
 	if (tail != '\0')
 	{

@@ -488,6 +488,9 @@ void GenList::ClassifyWords(char* words[], int len)
 
 int GenList::gen_chain_word(char* words[], int len, char* result[], char head, char tail, bool enable_loop)
 {
+
+	assert(words != NULL);
+	assert(result != NULL);
 	int long_return = 0;
 	int i;
 	int st_len = 0;
@@ -569,6 +572,9 @@ int GenList::gen_chain_word(char* words[], int len, char* result[], char head, c
 
 int GenList::gen_chain_char(char* words[], int len, char* result[], char head, char tail, bool enable_loop)
 {
+
+	assert(words != NULL);
+	assert(result != NULL);
 	int long_return = 0;
 	int i;
 	int st_len = 0;
