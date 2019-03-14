@@ -32,15 +32,15 @@ namespace UnitTests
 				switch (i)
 				{
 				case(0):
-					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', false);
 					Assert::AreEqual(len, 29);
 					break;
 				case(1):
-					len = core->gen_chain_word(readin->Words, readin->WordNum, result, 'd', '0', false);
+					len = core->gen_chain_word(readin->Words, readin->WordNum, result, 'd', '\0', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(2):
-					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', 'e', false);
+					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', 'e', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(3):
@@ -48,15 +48,15 @@ namespace UnitTests
 					Assert::AreEqual(len, 25);
 					break;
 				case(4):
-					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '0', '0', false);
+					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '\0', '\0', false);
 					Assert::AreEqual(len, 29);
 					break;
 				case(5):
-					len = core->gen_chain_char(readin->Words, readin->WordNum, result, 'd', '0', false);
+					len = core->gen_chain_char(readin->Words, readin->WordNum, result, 'd', '\0', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(6):
-					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '0', 'e', false);
+					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '\0', 'e', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(7):
@@ -89,15 +89,15 @@ namespace UnitTests
 				switch (i)
 				{
 				case(0):
-					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', true);
+					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', true);
 					Assert::AreEqual(len, 7);
 					break;
 				case(1):
-					len = core->gen_chain_word(readin->Words, readin->WordNum, result, 'b', '0', true);
+					len = core->gen_chain_word(readin->Words, readin->WordNum, result, 'b', '\0', true);
 					Assert::AreEqual(len, 4);
 					break;
 				case(2):
-					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', 'b', true);
+					len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', 'b', true);
 					Assert::AreEqual(len, 3);
 					break;
 				case(3):
@@ -105,15 +105,15 @@ namespace UnitTests
 					Assert::AreEqual(len, 4);
 					break;
 				case(4):
-					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '0', '0', true);
+					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '\0', '\0', true);
 					Assert::AreEqual(len, 7);
 					break;
 				case(5):
-					len = core->gen_chain_char(readin->Words, readin->WordNum, result, 'b', '0', true);
+					len = core->gen_chain_char(readin->Words, readin->WordNum, result, 'b', '\0', true);
 					Assert::AreEqual(len, 4);
 					break;
 				case(6):
-					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '0', 'b', true);
+					len = core->gen_chain_char(readin->Words, readin->WordNum, result, '\0', 'b', true);
 					Assert::AreEqual(len, 3);
 					break;
 				case(7):
@@ -145,7 +145,7 @@ namespace UnitTests
 
 				Core *core = new Core();
 
-				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', true);
+				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', true);
 			}
 			catch (const char * msg)
 			{
@@ -171,7 +171,7 @@ namespace UnitTests
 
 				Core *core = new Core();
 
-				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', false);
 			}
 			catch (const char * msg)
 			{
@@ -199,7 +199,7 @@ namespace UnitTests
 
 				Core *core = new Core();
 
-				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+				len = core->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', false);
 			}
 			catch (const char * msg)
 			{

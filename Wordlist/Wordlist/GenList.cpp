@@ -209,7 +209,7 @@ void GenList::SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, int a, int
 	{
 		if (FirstTimeIn ==0 && needgo[i] == 0)
 		{
-			continue;
+			//continue;
 		}
 		if (FirstTimeIn == 0)
 		{

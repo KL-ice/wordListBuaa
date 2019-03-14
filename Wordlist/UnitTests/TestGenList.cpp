@@ -32,15 +32,15 @@ namespace UnitTests
 				switch (i)
 				{
 				case(0):
-					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', false);
 					Assert::AreEqual(len, 29);
 					break;
 				case(1):
-					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, 'd', '0', false);
+					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, 'd', '\0', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(2):
-					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', 'e', false);
+					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', 'e', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(3):
@@ -48,15 +48,15 @@ namespace UnitTests
 					Assert::AreEqual(len, 25);
 					break;
 				case(4):
-					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '0', '0', false);
+					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '\0', '\0', false);
 					Assert::AreEqual(len, 29);
 					break;
 				case(5):
-					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, 'd', '0', false);
+					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, 'd', '\0', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(6):
-					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '0', 'e', false);
+					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '\0', 'e', false);
 					Assert::AreEqual(len, 27);
 					break;
 				case(7):
@@ -90,15 +90,15 @@ namespace UnitTests
 				switch (i)
 				{
 				case(0):
-					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', true);
+					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', true);
 					Assert::AreEqual(len, 7);
 					break;
 				case(1):
-					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, 'b', '0', true);
+					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, 'b', '\0', true);
 					Assert::AreEqual(len, 4);
 					break;
 				case(2):
-					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', 'b', true);
+					len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', 'b', true);
 					Assert::AreEqual(len, 3);
 					break;
 				case(3):
@@ -106,15 +106,15 @@ namespace UnitTests
 					Assert::AreEqual(len, 4);
 					break;
 				case(4):
-					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '0', '0', true);
+					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '\0', '\0', true);
 					Assert::AreEqual(len, 7);
 					break;
 				case(5):
-					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, 'b', '0', true);
+					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, 'b', '\0', true);
 					Assert::AreEqual(len, 4);
 					break;
 				case(6):
-					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '0', 'b', true);
+					len = genlist->gen_chain_char(readin->Words, readin->WordNum, result, '\0', 'b', true);
 					Assert::AreEqual(len, 3);
 					break;
 				case(7):
@@ -146,7 +146,7 @@ namespace UnitTests
 
 				GenList *genlist = new GenList();
 
-				len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', true);
+				len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', true);
 			}
 			catch (const char * msg)
 			{
@@ -172,7 +172,7 @@ namespace UnitTests
 
 				GenList *genlist = new GenList();
 
-				len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+				len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', false);
 			}
 			catch (const char * msg)
 			{
@@ -200,7 +200,7 @@ namespace UnitTests
 
 				GenList *genlist = new GenList();
 
-				len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '0', '0', false);
+				len = genlist->gen_chain_word(readin->Words, readin->WordNum, result, '\0', '\0', false);
 			}
 			catch (const char * msg)
 			{

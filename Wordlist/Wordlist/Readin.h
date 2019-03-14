@@ -23,8 +23,9 @@ public:
 	char ** Words = new char *[11000];
 	int WordLen[11000] = { 0 };
 	void GetWords(char * filename);
-private:
 	void ClassifyWords();
+
+private:
 };
 
 bool compare(int a, int b);
