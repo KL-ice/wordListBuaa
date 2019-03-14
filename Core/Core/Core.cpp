@@ -313,7 +313,7 @@ void GenList::Print(int mode, const char * filename, vector<vector<vector<char *
 			begin = i;
 		}
 	}
-	while (max_len != 0)
+	while (max_len > 0)
 	{
 		int tag = 0;
 		for (i = 0; i < 26; i++)

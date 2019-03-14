@@ -45,7 +45,6 @@ int main(int argc, char * argv[])
 
 		Readin *readin = new Readin();
 		readin->GetWords(input->FileName);
-		//readin->ClassifyWords();
 
 		Core *core = new Core();
 		//GenList *genlist = new GenList();
@@ -70,7 +69,7 @@ int main(int argc, char * argv[])
 		for (i = 0; i < RoadLen; i++)
 		{
 			outfile << result[i] << endl;
-			cout << result[i] << endl;
+			//cout << result[i] << endl;
 		}
 		cout << RoadLen << endl;
 		outfile.close();

@@ -138,7 +138,7 @@ void GenList::SerchCircle(vector<vector<vector<char * > > > WordTree, vector<vec
 			{
 				if (WordTree[i][j].size() >= 2)
 				{
-					cout << "Become Circle" << endl;
+					//cout << "Become Circle" << endl;
 					throw "Become Circle";
 				}
 			}
@@ -176,7 +176,7 @@ void GenList::SerchCircle(vector<vector<vector<char * > > > WordTree, vector<vec
 	{
 		if (indeg[i] > 0)
 		{
-			cout << "Become Circle" << endl;
+			//cout << "Become Circle" << endl;
 			throw "Become Circle";
 		}
 	}
@@ -209,12 +209,12 @@ void GenList::SerchListCircle(int mode, int AlaphBegin, int AlaphEnd, int a, int
 	{
 		if (FirstTimeIn ==0 && needgo[i] == 0)
 		{
-			//continue;
+			continue;
 		}
-		if (FirstTimeIn == 0)
-		{
-			cout << i << endl;
-		}
+		//if (FirstTimeIn == 0)
+		//{
+			//cout << i << endl;
+		//}
 		int nj_len = GWordTreeNext[i].size();
 		for(nj = 0; nj<nj_len; nj++)
 		{
@@ -302,7 +302,7 @@ void GenList::Print(int mode, const char * filename, vector<vector<vector<char *
 			begin = i;
 		}
 	}
-	while (max_len != 0)
+	while (max_len > 0)
 	{
 		int tag = 0;
 		for (i = 0; i < 26; i++)

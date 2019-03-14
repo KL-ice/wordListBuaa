@@ -57,7 +57,7 @@ void Input::InputHandle(int n, char * para[])
 			First = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
-				cout << "Too Long Begin!" << endl;
+				//cout << "Too Long Begin!" << endl;
 				throw "Too Long Begin!";
 			}
 			if (First < 0 || First >= 26)
@@ -71,7 +71,7 @@ void Input::InputHandle(int n, char * para[])
 			Last = tolower(para[i + 1][0]) - 'a';
 			if (strlen(para[i + 1]) > 1)
 			{
-				cout << "Too Long End!" << endl;
+				//cout << "Too Long End!" << endl;
 				throw "Too Long End!";
 			}
 			if (Last < 0 || Last >= 26)
