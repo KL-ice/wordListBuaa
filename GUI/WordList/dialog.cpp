@@ -1,8 +1,12 @@
 #include "dialog.h"
+#include <string>
 #include "ui_dialog.h"
 #include "calculator.h"
 #include <QDebug>
 #include <QFileDialog>
+#include <cstring>
+#include <string>
+#include <string.h>
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -53,16 +57,9 @@ void Dialog::on_btn_go_clicked()
     text_c = ba.data();
     cal->setTextIn(text_c);
 
-    qDebug() << cal->wordsMost;
-    qDebug() << cal->allowCircle;
-    qDebug() << cal->headChar;
-    qDebug() << cal->tailChar;
-    qDebug() << cal->textIn;
-
-
     //调用cal的核心功能函数
     cal->core();
-    ui->tb_out->setText(cal->getTextOut());
+	ui->tb_out->setText(cal->getTextOut());
 
 }
 

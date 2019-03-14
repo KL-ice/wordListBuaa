@@ -54,12 +54,13 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *btn_go;
     QSpacerItem *horizontalSpacer;
+    QTextBrowser *textBrowser;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(705, 361);
+        Dialog->resize(705, 476);
         verticalLayout_5 = new QVBoxLayout(Dialog);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
@@ -110,7 +111,7 @@ public:
         te_in->setMaximumSize(QSize(250, 250));
         QFont font2;
         font2.setFamily(QString::fromUtf8("Times New Roman"));
-        font2.setPointSize(12);
+        font2.setPointSize(11);
         te_in->setFont(font2);
 
         verticalLayout_3->addWidget(te_in);
@@ -241,7 +242,7 @@ public:
         btn_go->setMaximumSize(QSize(300, 16777215));
         QFont font4;
         font4.setFamily(QString::fromUtf8("Times New Roman"));
-        font4.setPointSize(24);
+        font4.setPointSize(30);
         font4.setBold(true);
         font4.setWeight(75);
         btn_go->setFont(font4);
@@ -256,6 +257,13 @@ public:
 
         verticalLayout_5->addLayout(horizontalLayout_4);
 
+        textBrowser = new QTextBrowser(Dialog);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setMinimumSize(QSize(0, 100));
+        textBrowser->setMaximumSize(QSize(16777215, 100));
+
+        verticalLayout_5->addWidget(textBrowser);
+
 
         retranslateUi(Dialog);
 
@@ -265,7 +273,9 @@ public:
     void retranslateUi(QDialog *Dialog)
     {
         Dialog->setWindowTitle(QApplication::translate("Dialog", "WordList", nullptr));
+        le_path->setPlaceholderText(QApplication::translate("Dialog", "filepath", nullptr));
         btn_import->setText(QApplication::translate("Dialog", "Import", nullptr));
+        te_in->setPlaceholderText(QString());
         cbox_choose->setItemText(0, QApplication::translate("Dialog", "Most Words", nullptr));
         cbox_choose->setItemText(1, QApplication::translate("Dialog", "Most Chars", nullptr));
 
@@ -275,6 +285,17 @@ public:
         label_2->setText(QApplication::translate("Dialog", "set tail char\357\274\232", nullptr));
         btn_export->setText(QApplication::translate("Dialog", "Export", nullptr));
         btn_go->setText(QApplication::translate("Dialog", "GO", nullptr));
+        textBrowser->setHtml(QApplication::translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\207\240\347\202\271\350\257\264\346\230\216\357\274\232</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1.\346\202\250\345\217\257\344\273\245\347\233\264\346\216\245\345\234\250\350\276\223\345\205\245\346\241\206\344\270\255\350\276\223\345\205\245\346\226\207\346\234\254\357\274\233\344\271\237\345\217\257\344\273\245\345\257\274\345\205\245\346\226\207\344\273\266\357\274\214\350\257\245\346\226\207\344\273\266\345\206\205\345\256\271\344\274\232<span style=\" font-weight:600;"
+                        "\">\350\246\206\347\233\226</span>\346\230\276\347\244\272\345\234\250\350\276\223\345\205\245\346\241\206\344\270\255\357\274\214\347\204\266\345\220\216\346\202\250\345\217\257\344\273\245\347\273\247\347\273\255\345\234\250\350\276\223\345\205\245\346\241\206\344\270\255\350\277\275\345\212\240\346\226\207\346\234\254\343\200\202\346\200\273\344\271\213\357\274\214\346\210\221\344\273\254\346\234\200\347\273\210\346\230\257\345\257\271\350\276\223\345\205\245\346\241\206\344\270\255\347\232\204\346\226\207\346\234\254 \350\256\241\347\256\227\346\234\200\351\225\277\345\215\225\350\257\215\351\223\276\343\200\202</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2.\346\202\250\345\217\257\344\273\245\345\234\250\350\256\276\347\275\256\351\246\226\345\260\276\345\255\227\346\257\215\345\244\204\357\274\210\345\215\263set head/tail char\357\274\211\350\276\223\345\205\245\345\244\247\345\206\231\345\255\227\346\257\215\357\274\214"
+                        "\346\210\221\344\273\254\344\274\232\345\260\206\345\205\266\350\247\206\344\270\272\345\260\217\345\206\231\343\200\202</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3.\350\276\223\345\205\245\347\232\204\346\226\207\346\234\254\344\270\255\347\232\204\345\215\225\350\257\215\346\225\260\345\210\253\350\266\205\350\277\20710000\344\270\252\343\200\202</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">4.\346\257\217\344\270\252\345\215\225\350\257\215\347\232\204\351\225\277\345\272\246\345\210\253\350\266\205\350\277\207400\345\255\227\347\254\246\343\200\202</p></body></html>", nullptr));
     } // retranslateUi
 
 };

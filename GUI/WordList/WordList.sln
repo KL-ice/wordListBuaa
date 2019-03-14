@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WordList", "WordList.vcxproj", "{D963C5B8-BEFA-3E28-B8CD-8AFE8FF58E79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D963C5B8-BEFA-3E28-B8CD-8AFE8FF58E79}.Debug|x64.ActiveCfg = Debug|x64
+		{D963C5B8-BEFA-3E28-B8CD-8AFE8FF58E79}.Debug|x64.Build.0 = Debug|x64
+		{D963C5B8-BEFA-3E28-B8CD-8AFE8FF58E79}.Release|x64.ActiveCfg = Release|x64
+		{D963C5B8-BEFA-3E28-B8CD-8AFE8FF58E79}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7F7E58F-5E3D-4DD4-B4F8-DBF85C30479F}
+	EndGlobalSection
+EndGlobal

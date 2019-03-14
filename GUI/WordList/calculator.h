@@ -1,6 +1,6 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
-
+#include<string>
 
 class Calculator
 {
@@ -11,7 +11,8 @@ public:
     void setHeadChar(int ch);
     void setTailChar(int ch);
     void setTextIn(char *text);
-    char* getTextOut();
+    //std::string getTextOut();
+	char *getTextOut();
     void core();
 
 
@@ -24,7 +25,6 @@ public:
     char *textIn;
     char *textOut;
 
-    //TODO: 存储文件内容
 
 };
 

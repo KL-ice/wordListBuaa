@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         dialog.cpp \
-    calculator.cpp
+    calculator.cpp \
+    Readin.cpp
 
 HEADERS += \
         dialog.h \
-    calculator.h
+    calculator.h \
+    Readin.h
 
 FORMS += \
         dialog.ui
