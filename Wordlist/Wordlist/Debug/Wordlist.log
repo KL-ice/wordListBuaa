@@ -1,2 +1,9 @@
-﻿  Wordlist.cpp
+﻿  pch.cpp
+  Core.cpp
+  GenList.cpp
+  Input.cpp
+  Readin.cpp
+  Wordlist.cpp
+  正在编译...
+  正在生成代码...
   Wordlist.vcxproj -> F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Debug\Wordlist.exe
