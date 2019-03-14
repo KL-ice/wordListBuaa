@@ -1,0 +1,9 @@
+﻿  Core.cpp
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(3): warning C4603: “CoreDll”: 未定义宏或在预编译头使用后定义发生改变
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(3): note: 将宏添加到预编译头中，而不是在此处定义
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(4): note: 使用预编译头
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(675): warning C4273: “gen_chain_word”: dll 链接不一致
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.h(89): note: 参见“gen_chain_word”的前一个定义
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(683): warning C4273: “gen_chain_char”: dll 链接不一致
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.h(90): note: 参见“gen_chain_char”的前一个定义
+  Core.vcxproj -> F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Core\Debug\Core.dll

@@ -1,0 +1,28 @@
+﻿  stdafx.cpp
+  Core.cpp
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(3): warning C4603: “CoreDll”: 未定义宏或在预编译头使用后定义发生改变
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(3): note: 将宏添加到预编译头中，而不是在此处定义
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(4): note: 使用预编译头
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(120): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(204): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(229): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(238): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(281): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(466): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(469): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(540): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(543): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(575): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(578): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(623): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(626): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(658): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(661): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(680): warning C4273: “gen_chain_word”: dll 链接不一致
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.h(90): note: 参见“gen_chain_word”的前一个定义
+f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.cpp(688): warning C4273: “gen_chain_char”: dll 链接不一致
+  f:\学习\大三下\软件工程\第1次作业\repo\wordlistbuaa\core\core\core.h(91): note: 参见“gen_chain_char”的前一个定义
+  dllmain.cpp
+  正在生成代码...
+    正在创建库 F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Core\x64\Debug\Core.lib 和对象 F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Core\x64\Debug\Core.exp
+  Core.vcxproj -> F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Core\x64\Debug\Core.dll

@@ -1,0 +1,13 @@
+﻿LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
+    正在创建库 F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Release\UnitTests.lib 和对象 F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Release\UnitTests.exp
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall Input::Input(void)" (??0Input@@QAE@XZ)
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: void __thiscall Input::InputHandle(int,char * * const)" (?InputHandle@Input@@QAEXHQAPAD@Z)
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: void __thiscall Readin::GetWords(char *)" (?GetWords@Readin@@QAEXPAD@Z)
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall Core::Core(void)" (??0Core@@QAE@XZ)
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: int __thiscall Core::gen_chain_word(char * * const,int,char * * const,char,char,bool)" (?gen_chain_word@Core@@QAEHQAPADH0DD_N@Z)
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: int __thiscall Core::gen_chain_char(char * * const,int,char * * const,char,char,bool)" (?gen_chain_char@Core@@QAEHQAPADH0DD_N@Z)
+TestCore.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall Core::~Core(void)" (??1Core@@QAE@XZ)
+TestGenList.obj : error LNK2001: 无法解析的外部符号 "public: __thiscall GenList::GenList(void)" (??0GenList@@QAE@XZ)
+TestGenList.obj : error LNK2001: 无法解析的外部符号 "public: int __thiscall GenList::gen_chain_word(char * * const,int,char * * const,char,char,bool)" (?gen_chain_word@GenList@@QAEHQAPADH0DD_N@Z)
+TestGenList.obj : error LNK2001: 无法解析的外部符号 "public: int __thiscall GenList::gen_chain_char(char * * const,int,char * * const,char,char,bool)" (?gen_chain_char@GenList@@QAEHQAPADH0DD_N@Z)
+F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Release\UnitTests.dll : fatal error LNK1120: 10 个无法解析的外部命令

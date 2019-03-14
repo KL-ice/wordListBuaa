@@ -1,0 +1,21 @@
+[2019-03-14 10:43:23] [info] Start Program:
+Path:"F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Debug\Wordlist.exe"
+Arguments:-w F:\a.txt 
+Working directory: "F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Wordlist\"
+Modules: Selected: F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Debug\Wordlist.exe F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Debug\UnitTests.dll Excluded: 
+Sources: Selected: F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Wordlist F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\UnitTests Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\wbkin\AppData\Local\Temp\y1a3okrz.4dg 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2019-03-14 10:43:23] [info] Module: F:\学习\大三下\软件工程\第1次作业\repo\wordListBuaa\Wordlist\Debug\Wordlist.exe is selected because it matches selected pattern: 
+[2019-03-14 10:45:37] [info] ----------------------------------------------------
+[2019-03-14 10:45:37] [info] Coverage binary generated in file: C:\Users\wbkin\AppData\Local\Temp\y1a3okrz.4dg
+[2019-03-14 10:45:37] [info] ----------------------------------------------------
