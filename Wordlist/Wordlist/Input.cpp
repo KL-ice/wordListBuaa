@@ -44,17 +44,16 @@ void Input::InputHandle(int n, char * para[])
 			}
 			Mode = 0;
 			i = i + 1;
-			if (CompareStr(para[i], "txt.") == 1)
+			
+			tag = 1;
+			int Uslen = strlen(para[i]) + 1;
+			if (Uslen >= 150)
 			{
-				tag = 1;
-				int Uslen = strlen(para[i]) + 1;
-				if (Uslen >= 150)
-				{
-					throw "Too long filename";
-				}
-				FileName = new char[Uslen];
-				strcpy_s(FileName, Uslen, para[i]);
+				throw "Too long filename";
 			}
+			FileName = new char[Uslen];
+			strcpy_s(FileName, Uslen, para[i]);
+			
 		}
 		else if (strcmp(para[i], "-c") == 0)
 		{
@@ -64,17 +63,16 @@ void Input::InputHandle(int n, char * para[])
 			}
 			Mode = 1;
 			i = i + 1;
-			if (CompareStr(para[i], "txt.") == 1)
+			
+			tag = 1;
+			int Uslen = strlen(para[i]) + 1;
+			if (Uslen >= 150)
 			{
-				tag = 1;
-				int Uslen = strlen(para[i]) + 1;
-				if (Uslen >= 150)
-				{
-					throw "Too long filename";
-				}
-				FileName = new char[Uslen];
-				strcpy_s(FileName, Uslen, para[i]);
+				throw "Too long filename";
 			}
+			FileName = new char[Uslen];
+			strcpy_s(FileName, Uslen, para[i]);
+			
 		}
 		else if (strcmp(para[i], "-h") == 0)
 		{
